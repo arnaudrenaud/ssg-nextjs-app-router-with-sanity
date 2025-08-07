@@ -15,5 +15,7 @@ export default async function ArticlePage({
 }) {
   const { slug } = await params;
 
-  return <h1>{slug}</h1>;
+  const article = ARTICLES.find((article) => article.slug === slug);
+
+  return <h1>{article?.title}</h1>;
 }
