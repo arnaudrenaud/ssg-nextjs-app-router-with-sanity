@@ -21,7 +21,7 @@ export default async function Home() {
         {posts.map((post) => (
           <li key={post.slug.current}>
             <Link href={`/article/${post.slug.current}`}>
-              {post.title}
+              <span className="font-bold underline">{post.title}</span>
               <br />
               <span className="text-sm text-secondary">
                 {post.author?.name && `${post.author?.name} `}(
