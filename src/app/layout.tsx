@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +26,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`min-h-svh flex flex-col ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-          <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-            {children}
-          </main>
-        </div>
+        <header className="fixed top-0 left-0 right-0 z-10 bg-background border-b border-muted">
+          <h1 className="max-w-3xl mx-auto font-bold p-4 uppercase">
+            <nav>
+              <ul className="flex gap-4">
+                <li>
+                  <Link href="/">A Blog Example</Link>
+                </li>
+              </ul>
+            </nav>
+          </h1>
+        </header>
+        <main className="w-full max-w-3xl mx-auto flex-1 mt-12 mb-4 p-4 lg:mt-20">
+          {children}
+        </main>
+        <footer className="bg-background border-t border-muted text-secondary text-sm">
+          <div className="max-w-3xl mx-auto p-4">
+            Made by{" "}
+            <Link href="https://arnaudrenaud.com" className="underline">
+              Arnaud Renaud
+            </Link>
+          </div>
+        </footer>
       </body>
     </html>
   );
