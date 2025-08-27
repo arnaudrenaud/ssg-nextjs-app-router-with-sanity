@@ -6,3 +6,11 @@ export const GET_ALL_POSTS = defineQuery(`
     author->,
   }
 `);
+
+export const GET_POST_BY_SLUG = defineQuery(`
+  *[_type == "post" && slug.current == $slug][0] {
+    ...,
+    author->,
+    categories[]->,
+  }
+`);
