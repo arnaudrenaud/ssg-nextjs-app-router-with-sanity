@@ -1,6 +1,7 @@
-import { client } from "../../../../sanity/lib/client";
-import { urlFor } from "../../../../sanity/lib/image";
-import { GET_ALL_POSTS, GET_POST_BY_SLUG } from "../../../../sanity/queries";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { GET_ALL_POSTS, GET_POST_BY_SLUG } from "@/sanity/queries";
+
 import { RichContent } from "@/app/lib/RichContent";
 import Image from "next/image";
 

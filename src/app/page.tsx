@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { client } from "../../sanity/lib/client";
-import { GET_ALL_POSTS } from "../../sanity/queries";
+import { client } from "@/sanity/lib/client";
+import { GET_ALL_POSTS } from "@/sanity/queries";
 
 export default async function Home() {
   const posts = await client.fetch(GET_ALL_POSTS);

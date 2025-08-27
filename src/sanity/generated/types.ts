@@ -284,7 +284,7 @@ export type SanityAssetSourceData = {
 
 export type AllSanitySchemaTypes = Post | Author | Category | BlockContent | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
-// Source: ./sanity/queries.ts
+// Source: ./src/sanity/queries.ts
 // Variable: GET_ALL_POSTS
 // Query: *[_type == "post"] | order(publishedAt desc) {    ...,    author->,  }
 export type GET_ALL_POSTSResult = Array<{
