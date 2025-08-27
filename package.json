@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy-schema": "./sanity/deploy-schema.sh"
   },
   "dependencies": {
     "@sanity/icons": "^3.7.4",
