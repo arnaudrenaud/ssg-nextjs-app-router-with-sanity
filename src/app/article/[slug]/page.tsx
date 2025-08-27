@@ -5,10 +5,6 @@ import { GET_ALL_POSTS, GET_POST_BY_SLUG } from "@/sanity/queries";
 import { RichContent } from "@/app/lib/RichContent";
 import Image from "next/image";
 
-type Article = {
-  slug: string;
-};
-
 export async function generateStaticParams() {
   const posts = await client.fetch(GET_ALL_POSTS);
   return posts.map((post) => ({ slug: post.slug.current }));
@@ -17,7 +13,7 @@ export async function generateStaticParams() {
 export default async function ArticlePage({
   params,
 }: {
-  params: Promise<Article>;
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
 
