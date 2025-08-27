@@ -20,7 +20,7 @@ export default async function Home() {
       <ol className="list-none space-y-4">
         {posts.map((post) => (
           <li key={post.slug.current}>
-            <Link href={`/article/${post.slug.current}`}>
+            <Link href={`/post/${post.slug.current}`}>
               <span className="font-bold underline">{post.title}</span>
               <br />
               <span className="text-sm text-secondary">
