@@ -28,7 +28,7 @@ export default async function ArticlePage({
       <div className="space-y-6">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold">{post?.title}</h1>
-          <span className="text-sm text-secondary space-y-4">
+          <div className="text-sm text-secondary space-y-4">
             <div>
               Published on{" "}
               <time dateTime={post.publishedAt}>
@@ -49,7 +49,19 @@ export default async function ArticlePage({
                 {post.author.name}
               </div>
             )}
-          </span>
+            {post.categories && (
+              <ul className="flex gap-2">
+                {post.categories.map((category) => (
+                  <li
+                    className="inline rounded-full px-2 py-1 text-xs uppercase bg-secondary text-background"
+                    key={category._id}
+                  >
+                    {category.title}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
         <RichContent value={post.body} />
       </div>
