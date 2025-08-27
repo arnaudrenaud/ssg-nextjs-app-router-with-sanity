@@ -1,5 +1,11 @@
 import { defineQuery } from "next-sanity";
 
+export const GET_METADATA = defineQuery(`
+  *[_type == "metadata"][0] {
+    ...,
+  }
+`);
+
 export const GET_HOME_PAGE = defineQuery(`
   *[_type == "homePage"][0] {
     ...,
