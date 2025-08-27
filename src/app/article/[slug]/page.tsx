@@ -1,6 +1,8 @@
 import { client } from "../../../../sanity/lib/client";
+import { urlFor } from "../../../../sanity/lib/image";
 import { GET_ALL_POSTS, GET_POST_BY_SLUG } from "../../../../sanity/queries";
 import { RichContent } from "@/app/lib/RichContent";
+import Image from "next/image";
 
 type Article = {
   slug: string;
@@ -27,14 +29,29 @@ export default async function ArticlePage({
   return (
     <article>
       <div className="space-y-6">
-        <div className="space-y-1">
+        <div className="space-y-2">
           <h1 className="text-3xl font-bold">{post?.title}</h1>
-          <span className="text-sm text-secondary">
-            {post.author?.name && `${post.author?.name} `}(
-            <time dateTime={post.publishedAt}>
-              {new Date(post.publishedAt).toDateString()}
-            </time>
-            )
+          <span className="text-sm text-secondary space-y-4">
+            <div>
+              Published on{" "}
+              <time dateTime={post.publishedAt}>
+                {new Date(post.publishedAt).toDateString()}
+              </time>
+            </div>
+            {post.author && (
+              <div className="flex items-center gap-2">
+                {post.author.image && (
+                  <Image
+                    src={urlFor(post.author.image).width(96).height(96).url()}
+                    alt={`Portrait of ${post.author.name}`}
+                    width={48}
+                    height={48}
+                    className="rounded-full"
+                  />
+                )}
+                {post.author.name}
+              </div>
+            )}
           </span>
         </div>
         <RichContent value={post.body} />
