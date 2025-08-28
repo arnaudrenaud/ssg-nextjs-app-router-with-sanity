@@ -1,4 +1,6 @@
 import { PortableText } from "@portabletext/react";
+import { H1 } from "./H1";
+import { P } from "@/app/lib/P";
 
 export function RichContent(props: Parameters<typeof PortableText>[0]) {
   return (
@@ -6,9 +8,7 @@ export function RichContent(props: Parameters<typeof PortableText>[0]) {
       value={props.value}
       components={{
         block: {
-          h1: ({ children }) => (
-            <h1 className="text-3xl font-bold mt-6 mb-2">{children}</h1>
-          ),
+          h1: ({ children }) => <H1>{children}</H1>,
           h2: ({ children }) => (
             <h2 className="text-2xl font-semibold mt-5 mb-2">{children}</h2>
           ),
@@ -23,7 +23,7 @@ export function RichContent(props: Parameters<typeof PortableText>[0]) {
               {children}
             </blockquote>
           ),
-          normal: ({ children }) => <p className="my-2">{children}</p>,
+          normal: ({ children }) => <P>{children}</P>,
         },
         list: {
           bullet: ({ children }) => (

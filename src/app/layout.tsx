@@ -3,6 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { GET_METADATA } from "@/sanity/queries";
+import { ExternalLink } from "@/app/lib/ExternalLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,9 +64,12 @@ export default async function RootLayout({
         <footer className="bg-background border-t border-muted text-secondary text-sm">
           <div className="max-w-3xl mx-auto p-4">
             Made by{" "}
-            <Link href="https://arnaudrenaud.com" className="underline">
+            <ExternalLink
+              href="https://arnaudrenaud.com"
+              className="font-normal"
+            >
               Arnaud Renaud
-            </Link>
+            </ExternalLink>
           </div>
         </footer>
       </body>
