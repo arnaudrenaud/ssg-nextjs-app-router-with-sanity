@@ -1,4 +1,4 @@
-import { PortableText } from "next-sanity";
+import { PortableText } from "@portabletext/react";
 
 export function RichContent(props: Parameters<typeof PortableText>[0]) {
   return (

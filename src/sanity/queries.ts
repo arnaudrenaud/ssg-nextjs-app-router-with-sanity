@@ -1,4 +1,4 @@
-import { defineQuery } from "next-sanity";
+import { defineQuery } from "groq";
 // TODO: fix build error: https://github.com/sanity-io/next-sanity/issues/1899
 
 export const GET_METADATA = defineQuery(`
