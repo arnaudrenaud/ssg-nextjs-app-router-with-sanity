@@ -10,11 +10,11 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("author").title("Authors"),
       S.divider(),
       S.listItem()
-        .title("Home page")
-        .child(S.document().schemaType("homePage").documentId("homePage")),
-      S.listItem()
         .title("Metadata")
         .child(S.document().schemaType("metadata").documentId("metadata")),
+      S.listItem()
+        .title("Home page")
+        .child(S.document().schemaType("homePage").documentId("homePage")),
 
       ...S.documentTypeListItems().filter(
         (item) =>
