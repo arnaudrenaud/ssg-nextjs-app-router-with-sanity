@@ -2,7 +2,6 @@ import { ExternalLink } from "@/app/lib/ExternalLink";
 import { H1 } from "@/app/lib/H1";
 import { HR } from "@/app/lib/HR";
 import { P } from "@/app/lib/P";
-import Link from "next/link";
 
 export default function ContactPage() {
   return (
