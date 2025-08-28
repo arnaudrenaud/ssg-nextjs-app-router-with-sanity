@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy-schema": "./src/sanity/deploy-schema.sh",
+    "deploy-studio": "./src/sanity/deploy-studio.sh",
     "generate-types": "sanity schema extract --enforce-required-fields --path=src/sanity/generated/schema.json && sanity typegen generate"
   },
   "dependencies": {
