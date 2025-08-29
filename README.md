@@ -91,4 +91,6 @@ To achieve 2.:
 - Tick _Create_, _Update_ and _Delete_ trigger checkboxes
 - Save
 
-You can now change content in the studio and watch Netlify automatically rebuild the website. It can take about a minute for Netlify to complete rebuild: watch for progress on Netlify in the _Deploys_ section.
+You can now change content in the studio and watch Netlify automatically rebuild the website.
+
+ℹ️ It can take about a minute for Netlify to complete rebuild: watch for progress on Netlify in the _Deploys_ section.
