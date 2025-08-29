@@ -4,6 +4,7 @@ import { GET_ALL_POSTS, GET_POST_BY_SLUG } from "@/sanity/queries";
 
 import { RichContent } from "@/app/lib/RichContent";
 import Image from "next/image";
+import { H1 } from "@/app/lib/H1";
 
 export async function generateStaticParams() {
   const posts = await client.fetch(GET_ALL_POSTS);
@@ -27,7 +28,7 @@ export default async function ArticlePage({
     <article>
       <div className="space-y-6">
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold">{post?.title}</h1>
+          <H1>{post?.title}</H1>
           <div className="text-sm text-secondary space-y-4">
             <div>
               Published on{" "}
