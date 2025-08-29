@@ -13,8 +13,8 @@ export default function ContactPage() {
         and security but lacks a built-in way to handle form submissions.
       </P>
       <P>
-        However, you can still use a third-party service, e.g. if you wish to
-        receive an email everytime a user fills a form.
+        However, you can use a third-party service, e.g. if you wish to receive
+        an email everytime a user fills a form.
       </P>
       <HR />
       <P>
