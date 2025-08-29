@@ -43,7 +43,7 @@ export default async function RootLayout({
       >
         <Header />
 
-        <main className="w-full max-w-3xl mx-auto flex-1 mt-24 mb-8 p-4">
+        <main className="w-full max-w-3xl mx-auto flex-1 mt-18 lg:mt-22 mb-8 p-4">
           {children}
         </main>
 
