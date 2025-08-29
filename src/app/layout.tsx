@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import { GET_METADATA } from "@/sanity/queries";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
+import { DEFAULT_TITLE } from "@/app/constants/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,14 +19,16 @@ const geistMono = Geist_Mono({
 
 export const generateMetadata = async () => {
   const metadata = await client.fetch(GET_METADATA);
-  if (!metadata) {
-    throw new Error("Metadata not found.");
-  }
 
-  return {
-    title: metadata.title,
-    description: metadata.description,
-  };
+  return metadata
+    ? {
+        title: metadata.title,
+        description: metadata.description,
+      }
+    : {
+        title: DEFAULT_TITLE,
+        description: "My blog description.",
+      };
 };
 
 export default async function RootLayout({

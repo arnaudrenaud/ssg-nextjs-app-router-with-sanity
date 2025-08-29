@@ -6,13 +6,9 @@ import { LatestPosts } from "@/app/components/LatestPosts";
 export default async function Home() {
   const homePage = await client.fetch(GET_HOME_PAGE);
 
-  if (!homePage) {
-    throw new Error("Home page not found.");
-  }
-
   return (
     <div className="space-y-10">
-      <Hero hero={homePage.hero} />
+      <Hero hero={homePage?.hero} />
 
       <div className="space-y-4">
         <h2 className="text-2xl font-bold">Latest Posts</h2>
