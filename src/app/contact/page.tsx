@@ -37,6 +37,9 @@ export default function ContactPage() {
           required
           className="border border-muted rounded-md p-2"
         />
+        <i className="text-xs text-secondary">
+          For demonstration purposes, the email will be sent to this address.
+        </i>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
