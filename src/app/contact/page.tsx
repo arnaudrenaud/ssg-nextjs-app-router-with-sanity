@@ -14,7 +14,7 @@ export default function ContactPage() {
       </P>
       <P>
         To do so, you can use a third-party service, for example to receive an
-        email everytime a user fills a contact form.
+        email everytime a user fills a form.
       </P>
       <HR />
       <P>
@@ -49,8 +49,9 @@ export default function ContactPage() {
           name="message"
           required
           className="border border-muted rounded-md p-2 min-h-24"
+          defaultValue="Hi, trying to reach out to you from your blog."
         ></textarea>
-        <button className="mt-2 p-2 bg-foreground text-background rounded-md">
+        <button className="mt-2 p-2 bg-foreground text-background rounded-md active:bg-foreground/80">
           Submit
         </button>
       </form>
