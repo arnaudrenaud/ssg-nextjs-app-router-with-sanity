@@ -1,6 +1,8 @@
-# A static, CMS-based blog example
+# A Static, CMS-Powered Blog Example
 
-This codebase comes in support of the following article: How to build and deploy a CMS-based website for free (Next.js, Sanity, Netlify).
+🌎 Live demo: https://ssg-nextjs-cms-sanity.netlify.app
+
+This codebase comes in support of the following article: [Build and Deploy a Free CMS-Powered Website (Next.js, Sanity, Netlify)](https://www.arnaudrenaud.com/articles/free-static-website-cms/).
 
 ## Getting Started
 
