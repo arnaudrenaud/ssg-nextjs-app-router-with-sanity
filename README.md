@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# A static, CMS-based blog example
+
+This codebase comes in support of the following article: How to build and deploy a CMS-based website for free (Next.js, Sanity, Netlify).
 
 ## Getting Started
 
-First, run the development server:
+1. Copy `.env.example` to `.env` and set variables following embedded instructions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. Install dependencies:
+
+```sh
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Deploy studio (CMS interface) based on schema types:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run deploy-studio
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start development server:
 
-## Learn More
+```sh
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Editing schema and queries
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To fit this app to your needs, you will surely edit schema types (`src/sanity/schemaTypes`) and queries (`src/sanity/queries`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+After each change:
 
-## Deploy on Vercel
+```sh
+npm run generate-types # generate TypeScript type for each query
+npm run deploy-studio
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Try production build locally
+
+Build site:
+
+```sh
+npm run build
+```
+
+Build outputs to directory `out` (you can serve it locally with `npx serve out`).
